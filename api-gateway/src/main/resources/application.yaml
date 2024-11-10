@@ -1,0 +1,17 @@
+server:
+  port: 8060
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: shop
+          uri: lb://shop
+          predicates:
+            - Path=/shop/**
+        - id: warehouse
+          uri: lb://warehouse
+          predicates:
+            - Path=/warehouse/**
