@@ -21,12 +21,10 @@ public class ShopController {
         return "Hello World " + instanceId;
     }
 
-    @CrossOrigin(origins = "*")
     @GetMapping("/parts")
     public List<Part> partList() {
         List<Part> partList = List.of(new Part(1L, "Part 1", "Producer1", "https://www.creativefabrica.com/wp-content/uploads/2022/12/14/a-piece-of-cheese-cartoon-ilustration-Graphics-52238740-1.jpg"),
                 new Part(2L, "Part 2", "Producer 2", "https://www.creativefabrica.com/wp-content/uploads/2022/12/14/a-piece-of-cheese-cartoon-ilustration-Graphics-52238740-1.jpg"));
-
         return partList;
     }
 
