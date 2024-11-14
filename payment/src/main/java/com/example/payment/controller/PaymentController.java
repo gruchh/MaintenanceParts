@@ -1,6 +1,6 @@
 package com.example.payment.controller;
 
-import com.example.payment.PaymentService;
+import com.example.payment.EbookClient;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/payment")
 public class PaymentController {
 
-    private final PaymentService paymentService;
+    private final EbookClient ebookService;
 
     @PostMapping("/webhook")
     public String payment(@RequestBody String paymentInfo) throws JsonProcessingException {
@@ -24,7 +24,7 @@ public class PaymentController {
         JsonNode jsonNode = objectMapper.readTree(paymentInfo);
         String email = jsonNode.path("data").path("object").path("customer_details").path("email").asText();
         System.out.println(email);
-        paymentService.
+        ebookService.sendEmail(email);
         return "Hello World";
     }
 }

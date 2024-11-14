@@ -5,9 +5,9 @@ import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.service.annotation.HttpExchange;
 
 @HttpExchange
-public interface PaymentService {
+public interface EbookClient {
 
     @GetExchange("/sendEmail")
-    public String get(@RequestParam String email);
+    void sendEmail(@RequestParam String email);
 
 }

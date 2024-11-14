@@ -16,13 +16,12 @@ public class MailController {
     private final MailService mailService;
 
     @GetMapping("/sendEmail")
-    public String get(@RequestParam String email) {
+    public void sendEmail(@RequestParam String email) {
         try {
             mailService.sendMail(email);
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
-        return "get";
     }
 
 }
