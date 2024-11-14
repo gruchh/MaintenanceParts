@@ -2,7 +2,6 @@ package com.example.shop.controller;
 
 import com.example.shop.model.Part;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,8 +22,8 @@ public class ShopController {
 
     @GetMapping("/parts")
     public List<Part> partList() {
-        List<Part> partList = List.of(new Part(1L, "Part 1", "Producer1", "https://www.creativefabrica.com/wp-content/uploads/2022/12/14/a-piece-of-cheese-cartoon-ilustration-Graphics-52238740-1.jpg"),
-                new Part(2L, "Part 2", "Producer 2", "https://www.creativefabrica.com/wp-content/uploads/2022/12/14/a-piece-of-cheese-cartoon-ilustration-Graphics-52238740-1.jpg"));
+        List<Part> partList = List.of(new Part(1L, "Part 1", "Producer1", "https://www.creativefabrica.com/wp-content/uploads/2022/12/14/a-piece-of-cheese-cartoon-ilustration-Graphics-52238740-1.jpg", "https://buy.stripe.com/test_6oE5kxarD2BtduE3cd"),
+                new Part(2L, "Part 2", "Producer 2", "https://www.creativefabrica.com/wp-content/uploads/2022/12/14/a-piece-of-cheese-cartoon-ilustration-Graphics-52238740-1.jpg", "https://buy.stripe.com/test_00g4gtfLX6RJbmwcMM"));
         return partList;
     }
 

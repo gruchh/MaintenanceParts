@@ -15,3 +15,11 @@ spring:
           uri: lb://warehouse
           predicates:
             - Path=/warehouse/**
+        - id: payment
+          uri: lb://payment
+          predicates:
+            - Path=/payment/**
+        - id: email
+          uri: lb://email
+          predicates:
+            - Path=/email/**

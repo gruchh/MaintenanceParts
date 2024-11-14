@@ -7,15 +7,23 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
+        <module name="payment" />
         <module name="shop" />
         <module name="warehouse" />
         <module name="service-registry" />
+        <module name="email" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="payment-validation-service" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
+      <module name="email" options="-parameters" />
+      <module name="payment" options="-parameters" />
+      <module name="payment-validation-service" options="-parameters" />
       <module name="service-registry" options="-parameters" />
       <module name="shop" options="-parameters" />
       <module name="warehouse" options="-parameters" />
