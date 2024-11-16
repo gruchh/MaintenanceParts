@@ -16,9 +16,10 @@ public class MailService {
     public void sendMail(String mail) throws MessagingException {
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
-        mimeMessageHelper.setFrom("test@test.op.pl");
+        mimeMessageHelper.setFrom("trytson.wielki@gmail.com");
         mimeMessageHelper.setTo(mail);
         mimeMessageHelper.setSubject("Maintenance parts");
         mimeMessageHelper.setText("Maintenance info");
+        mailSender.send(mimeMessage);
     }
 }
